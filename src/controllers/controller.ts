@@ -35,17 +35,17 @@ const createBook = async (req: Request, res: Response) => {
 const updateRecord = async (req: Request, res: Response) => {
     try {
         let book = await updateBook(req.params, req.body, { new: true });
-        res.status(202).send(book);
+        res.status(200).send(book);
     } catch (error) {
-        res.status(400).send(error);
+        res.status(404).send(error);
     }
 };
 const deleteRecord = async (req: Request, res: Response) => {
     try {
         let book = await deleteBook(req.params);
-        res.status(202).send(book);
+        res.status(200).send(book);
     } catch (error) {
-        res.status(400).send(error);
+        res.status(404).send(error);
     }
 };
 
